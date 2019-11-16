@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Document</title>
+<style>
+*{margin: 0;padding: 0;box-sizing: border-box;}
+img{display: block; width: 100%;}
+.main{ padding-top: 20px;}
+.herder,.nav,.main{ width: 1200px; margin: 0 auto;}
+.nav_1{border-bottom: solid 1px #999;border-top:solid 2px #999 ;margin-bottom: 5px;}
+.nav ul::after{content: "";clear: both;display: table;}
+.nav li{list-style: none;float: left;}
+.nav li a{width: 170px;height: 42px;line-height: 42px;text-align: center;display: block;text-decoration: none;color: #000;}
+.nav li a:hover{color: red;background-image: url(images/i13.gif);}
+.solid{width: 1px;height: 20px;background-color: red;float: left;margin-top: 10px;}
+.nav_2 div{float: left;}
+.nav_2 div{display: none;}
+.nav_2 ul li{margin-left: 15px;}
+.love{margin-left: 130px;}
+.dz{margin-left: 330px;}
+.kh{margin-left: 490px;}
+.kb{margin-left: 670px}
+.wy{margin-left: 840px}
+.dm{margin-left: 960px}
+.col_3{width: 280px;height: 300px;float: left;padding-left: 5px;}
+.col_4{width:280px;height: 300px;float: right;}
+.col_3 ul li{list-style: none;float: left;margin-left:24px;}
+.main1 h2{font-size:16px;font-weight: 400;margin-bottom: 20px;}
+</style>
+</head>
+<body>
+<div class="herder">
+<div class="nav">
+	<ul class="nav_1">
+		 <li><a href="#" class="a">首页</a></li><div class="solid"></div>
+		 <li><a href="#">爱情片</a></li><div class="solid"></div>
+		 <li><a href="#">动作片</a></li><div class="solid"></div>
+		 <li><a href="#">科幻片</a></li><div class="solid"></div>
+		 <li><a href="#">恐怖片</a></li><div class="solid"></div>
+		 <li><a href="#">文艺片</a></li><div class="solid"></div>
+		 <li><a href="#">动漫</a></li>
+	</ul>
+<div class="nav_2">
+<div class="home aa" style="display: block;"><p>欢迎来到365影视网</p></div>
+<div class="love aa">
+<ul>
+<li>爱情喜剧</li>
+<li>古典爱情</li>
+<li>现代爱情</li>
+</ul>
+</div>
+<div class="dz aa">
+<ul>
+<li>枪战片</li>
+<li>武侠片</li>
+<li>魔幻片</li>
+</ul>
+</div>
+<div class="kh aa">
+<ul>
+<li>外星人</li>
+<li>自然灾难</li>
+<li>生物变异</li>
+</ul>
+</div>
+<div class="kb aa">
+<ul>
+<li>惊悚片</li>
+<li>恐怖片</li>
+<li>悬疑片</li>
+</ul>
+</div>
+<div class="wy aa">
+<ul>
+<li>音乐片</li>
+<li>歌舞片</li>
+<li>纪录片</li>
+</ul>
+</div>
+<div class="dm aa">
+<ul>
+<li>历史动漫</li>
+<li>搞笑动漫</li>
+<li>英雄动漫</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="banner">
+<img src="video/13.png"/>
+</div>
+</div>
+<div class="main">
+<div class="main1">
+<div class="col_3">
+<h2>按地区</h2>
+<ul class="adv">
+<li>内地</li>
+<li>香港</li>
+<li>美国</li>
+<li>韩国</li>
+<li>欧洲</li>
+<li>泰国</li>
+<li>其他</li>
+</ul>
+</div>
+<div class="col_3">
+<h2>按语言</h2>
+<ul class="adv">
+<li>中国</li>
+<li>美国</li>
+</ul>
+</div>
+<div class="col_3">
+<h2>按明星</h2>
+<ul class="adv">
+<li>杰森.斯坦森</li>
+<li>阿兰.德龙</li>
+<li>阿诺德.施瓦辛格</li>
+<li>亚当.桑德勒</li>
+<li>汤姆.克鲁斯</li>
+<li>基努.里维斯</li>
+</ul>
+</div>
+<div class="col_4">
+<h2>热门专题</h2>
+</div>
+</div>
+
+</div>
+<script src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+//	效果一:
+$(".nav_1 li").mousemove(function(){
+var index = $(this).index()/2
+console.log(index)
+$(".aa").eq(index).css("display","block").siblings().css("display","none")
+})
+//效果二
+var i = 0
+var clear_t = setInterval(function(){
+	i++
+	if(i == 2){
+		clearInterval(clear_t)
+		$(".banner").find("img").attr("src","video/14.png")
+	}
+},1000)
+
+var box = document.getElementById("list_id")
+box.innerHTML = box.innerHTML + box.innerHTML
+var t = 0
+setInterval(function(){
+	if(t == 5){
+		t = 0
+	}
+	box.style.marginTop = -30 * t + "px"
+},1000)
+
+var box = document.getElementsByClassName("box")
+
+for(i in box){
+	box[i].style.color = "red"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

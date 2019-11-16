@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			}
+		.pic{
+			width: 400px;
+		}
+		img{
+			width: 100%;
+			display: block;
+		}
+		.nav{
+			width: 400px;
+			overflow: hidden;
+		}
+		.nav ul {
+			width: 500px;
+		}
+		.nav li{
+			list-style: none;
+			width: 100px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+<div class="pic">
+ <img src="img/1.jpg" alt="" />
+</div>
+<div class="nav">
+	<ul>
+		<li><img src="img/1.jpg" alt="" /></li>
+		<li><img src="img/2.jpg" alt="" /></li>
+		<li><img src="img/3.jpg" alt="" /></li>
+		<li><img src="img/4.jpg" alt="" /></li>
+		<li><img src="img/5.jpg" alt="" /></li>
+	</ul>
+</div>
+<button class="left">向左</button>
+<button class="right">向右</button>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+//选项卡效果
+//第一步:创建一个数组,数组里面存放五张图片路径
+var img_s = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"]
+//第二步 点击切换——选项卡
+$(".nav li").click(function(){
+//	1.得到点击元素下标
+var index = $(this).index()
+//2.根据下标选择数组对应的图片路径——》给到显示的图片
+$(".pic img").attr("src",img_s[index])
+//找到pic 里面的 img标签 给img 标签更改 图片路径
+//添加属性attr()
+})
+//第三步:点击向左按钮移动缩略图
+$(".left").click(function(){
+	$(".nav ul").animate({
+		marginLeft : -100 + "px"
+	},1000)
+})
+//第四步:点击向右移动缩略图
+$(".right").click(function(){
+	$(".nav ul").animate({
+		marginLeft : 0 + "px"
+	},1000)
+})
+	
+</script>
+</body>
+</html>

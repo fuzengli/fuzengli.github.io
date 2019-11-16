@@ -1,0 +1,62 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container{
+	width: 1200px;
+	margin: 0 auto;
+}
+/*中心盒子内容样式*/
+.nav li{
+	list-style: none;
+	float: left;
+}
+.nav li a{
+	width: 170px;
+	height: 42px;
+	text-align: center;
+	line-height: 42px;
+	display: block;
+	text-decoration: none;
+	color: #000;
+}
+.nav li a:hover{
+	background-image: url(../images/i13.gif);
+	color: red;
+}  
+.nav{
+	border-top: 2px solid #999;
+	border-bottom: 1px solid #999;
+}
+.nav ul::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+/*清除浮动影响*/
+/*给子级存在浮动的元素的父级添加*/
+.solid{
+	width: 1px;
+	height: 20px;
+	background-color: #333;
+	float: left;
+	margin-top: 10px;
+}
+.nav_m{
+	float: left;
+	display: none;
+}
+.nav_m li{
+	list-style: none;
+	float: left;
+	margin-left: 15px;
+}
+.love{margin-left: 130px;}
+.dz{margin-left: 346px;}
+.kh{margin-left: 488px;}
+.kb{margin-left:660px;}
+.wy{margin-left: 840px;}
+.dm{margin-left: 963px;}
+
+

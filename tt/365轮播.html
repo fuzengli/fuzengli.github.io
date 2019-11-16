@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+	.show_m{	/*显示内容盒子样式*/
+		width: 600px;
+		height: 360px;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+	img{	/*所有图片共同样式*/
+	width: 200px;
+	height: 360px;
+	display: block;
+	float: left;
+	}
+	.list_img{
+		width: 2400px;
+		height: 360px;
+	}
+</style>
+</head>
+<body>
+<!--无缝轮播——》鼠标滑动暂停——》鼠标移开滚动-->
+
+<div class="show_m"><!--显示内容的盒子-->
+	<div class="list_img"><!--存放图片/内容的盒子-->
+		<img src="周日与周一的作业/online/video/1.jpg" alt="" />
+		<img src="周日与周一的作业/online/video/2.jpg" alt="" />
+		<img src="周日与周一的作业/online/video/3.jpg" alt="" />
+		<img src="周日与周一的作业/online/video/4.jpg" alt="" />
+		<img src="周日与周一的作业/online/video/5.jpg" alt="" />
+		<img src="周日与周一的作业/online/video/6.jpg" alt="" />
+	</div>
+</div>
+
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+//javascript
+//var list_img = document.getElementsByClassName("list_img")[0]
+//console.log(list_img)
+//var i = 0
+//list_img.innerHTML = list_img.innerHTML + list_img.innerHTML
+//function do_img(){
+//	if(i*10>=1200){
+//		i = 0
+//	}else{
+//		i++
+//	}
+//	list_img.style.marginLeft = -i*10+"px"
+//}
+//var tt = setInterval("do_img()",100)
+////暂停
+//list_img.onmousemove = function(){
+//	clearInterval(tt)
+////	清除计时器
+//}
+//list_img.onmouseout = function(){
+//	tt = setInterval("do_img()",100)
+//}
+//	jQuery
+//把内容重复两遍 ,当移动第一遍结束时,将左边
+//距恢复为0
+
+var list_img = $(".list_img")
+list_img.html(list_img.html()+list_img.html())
+console.log(list_img.html())
+var i = 0
+function img_t(){
+	if(i*10>=1200){
+		i = 0
+	}else{
+		i++
+	}
+	$(".list_img").css("margin-left",-i*10+"px")
+}
+var t = setInterval("img_t()",100)
+//移入和移除
+$(".list_img").hover(function(){
+	clearInterval(t)
+},function(){
+	t = setInterval("img_t()",100)
+})
+</script>
+
+
+</body>
+</html>
