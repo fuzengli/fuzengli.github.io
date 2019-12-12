@@ -739,7 +739,7 @@ ul {
 	width: 200px;
 	height: 74px;
 	float: left;
-	display: none;
+	/* display: none; */
 }
 
 .yincang1:hover {
