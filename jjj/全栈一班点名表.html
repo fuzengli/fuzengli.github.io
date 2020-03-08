@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 960px;
+            margin: 0 auto;
+            height: 800px;
+            background-color: red;
+        }
+        .row{
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        .row:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .col_5{
+            width: 20%;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            float: left;
+            padding:  0 15px;
+        }
+        .name_t{
+            border: solid 1px #000;
+             
+        }
+    </style>
+</head>
+<body>
+     <div class="box" >
+         <div class="row" id="box"></div>
+     </div>
+    <script>
+        var name_list = ["付增利","马兴雨","祁鹏浩","李永","李树宽","金轩宇","徐天蕾","王文祥","许鹤腾","孙忠义","王海涛","韩荣宽","王波",
+		"马铭扬","李金泽","米志远","郝泉翔","马晨贺","穆鹏博","马树仁","张士堂","孙晓伟","孙建涛","徐嘉伟","崔机制","王梦含","孙秋玉",
+		"马美华","金淑雅","李晓艳","杨金凤","毕秋欢","吴若彤","刘雪妍","张灵丽","任苏伟"]
+        var box = document.querySelector("#box")
+        var n_t = "";
+        for(var i = 0 ; i< name_list.length;i++){
+            n_t += "<div class='col_5'><div class='name_t'>"+name_list[i] +"</div> </div>"
+        }
+        box.innerHTML = n_t;
+        var col_5 = document.getElementsByClassName("col_5")
+        for(var ii = 0 ; ii< col_5.length;ii++){
+            console.log(col_5[ii]) 
+            col_5[ii].index= ii
+            col_5[ii].onclick = function(){
+                this.style.color = "#eee"
+            }
+        }
+    </script>
+</body>
+</html>
