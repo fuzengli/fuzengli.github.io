@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.img img{
+				width: 150px;
+				height: 200px;
+			}
+			.wcc{
+				border-radius: 50%;
+				background-color: red;
+				color: yellow;
+				border: 2px red solid;
+			}
+			.lxr{
+				border-radius: 50%;
+				background-color: green;
+				color: black;
+				border: 2px green solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="img">
+			<img src="37c860c1b684bcc5e62d6fb38684abb.jpg">
+		</div>
+		<button type="button" class="wcc">王晨晨</button>
+		<button type="button" class="lxr">❥(^_-)</button>
+	</body>
+	<script src="jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".wcc").click(function(){
+			$("img").css("width","500px")
+			$("img").css("height","800px")
+			$("img").css("transition","2s")
+			
+		})
+		$(".lxr").click(function(){
+			$("img").css("width","100px")
+			$("img").css("height","200px")
+			$("img").css("transition","2s")
+			
+		})
+	</script>
+</html>
+
